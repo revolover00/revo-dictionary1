@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bg-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2a1f1a" />
+      <stop offset="100%" stop-color="#0a0808" />
+    </radialGradient>
+    
+    <!-- Golden Gradients for the Feather -->
+    <linearGradient id="gold-grad-main" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5d68d" />
+      <stop offset="50%" stop-color="#d4af37" />
+      <stop offset="100%" stop-color="#aa7c11" />
+    </linearGradient>
+    
+    <linearGradient id="gold-grad-light" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff2c8" />
+      <stop offset="40%" stop-color="#e3c266" />
+      <stop offset="100%" stop-color="#996b08" />
+    </linearGradient>
+
+    <!-- Glowing Effect -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="transparent" />
+
+  <g transform="translate(400, 360) rotate(25) scale(1.4)" filter="url(#glow)">
+    <!-- Feather Stem (Rachis) -->
+    <path d="M -10,150 C -5,50 10,-80 40,-180 C 45,-200 48,-210 50,-220 L 40,-215 C 5,-100 -20,50 -15,160 Z" fill="url(#gold-grad-light)" />
+    
+    <!-- Left Vane -->
+    <path d="M 40,-180 C 10,-150 -40,-80 -60,0 C -70,40 -60,100 -20,140 L -10,150 C -5,80 5,-20 40,-180 Z" fill="url(#gold-grad-main)" opacity="0.9" />
+    
+    <!-- Right Vane with Circuit-like Cuts -->
+    <path d="M 40,-180 C 60,-120 70,-50 60,30 C 55,70 30,120 -10,150 L -10,150 C 10,60 15,-50 40,-180 Z" fill="url(#gold-grad-main)" opacity="0.8" />
+    
+    <!-- Circuit Nodes & Lines overlay on the right vane -->
+    <g stroke="#fff2c8" stroke-width="1.5" fill="#fff2c8" opacity="0.7">
+      <circle cx="35" cy="-80" r="3" />
+      <circle cx="50" cy="-40" r="2.5" />
+      <circle cx="45" cy="10" r="3" />
+      <circle cx="20" cy="60" r="2" />
+      
+      <polyline points="20,-60 35,-80 50,-40 30,-20 45,10 20,60 5,80" fill="none" />
+      <line x1="35" y1="-80" x2="40" y2="-100" />
+      <line x1="50" y1="-40" x2="60" y2="-30" />
+      <line x1="45" y1="10" x2="55" y2="20" />
+    </g>
+
+    <!-- Nib -->
+    <path d="M -16,155 L -5,190 L 2,190 L -8,155 Z" fill="url(#gold-grad-light)" />
+    <path d="M -5,190 L -1.5,210 L 2,190 Z" fill="#fff2c8" />
+  </g>
+  
+  <!-- Text -->
+  <text x="400" y="660" font-family="'IBM Plex Sans Arabic', Arial, sans-serif" font-size="52" font-weight="700" fill="url(#gold-grad-main)" text-anchor="middle" filter="url(#glow)">ريفو المعجم</text>
+  <text x="400" y="700" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="4" fill="#d4af37" text-anchor="middle" opacity="0.8">RIVO AL-MU'JAM AI ENGINE</text>
+</svg>
