@@ -114,7 +114,8 @@ export default function Index() {
       <div className="fixed top-[-20%] left-1/2 -translate-x-1/2 w-full h-[60vh] bg-gradient-to-b from-amber-900/10 to-transparent blur-[120px] pointer-events-none z-0" />
 
       <div className="relative z-10 flex flex-col min-h-screen">
-        <header className="flex justify-center items-center p-6 md:p-8">
+        <header className="flex flex-col justify-center items-center p-6 md:p-8">
+          <span className="text-sm md:text-base text-muted-foreground/80 font-light tracking-widest mb-2">by Elmssiry</span>
           <img src="/logo.svg" alt="Rivo logo" className="h-44 object-contain drop-shadow-[0_0_20px_rgba(255,215,0,0.3)]" />
         </header>
 
