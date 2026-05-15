@@ -116,7 +116,7 @@ export default function Index() {
       <div className="relative z-10 flex flex-col min-h-screen">
         <header className="flex flex-col justify-center items-center p-6 md:p-8">
           <span className="text-sm md:text-base text-muted-foreground/80 font-light tracking-widest mb-2">by Elmssiry</span>
-          <img src="/logo.svg" alt="Rivo logo" className="h-44 object-contain drop-shadow-[0_0_20px_rgba(255,215,0,0.3)]" />
+          <img src="/logo.svg" alt="شعار ريفو معجمك" width="320" height="176" fetchPriority="high" decoding="async" className="h-44 object-contain drop-shadow-[0_0_20px_rgba(255,215,0,0.3)]" />
         </header>
 
         <main className="flex-1 flex flex-col items-center mt-12 md:mt-24 px-4 w-full relative">
@@ -164,17 +164,21 @@ export default function Index() {
             </div>
 
             {mode === 'word' && (
-              <form onSubmit={(e) => { e.preventDefault(); handleAnalyzeWord(word); }} className="relative group w-full max-w-md">
+              <form onSubmit={(e) => { e.preventDefault(); handleAnalyzeWord(word); }} className="relative group w-full max-w-md" role="search" aria-label="بحث عن معنى كلمة">
+                <label htmlFor="word-input" className="sr-only">ابحث عن معنى كلمة</label>
                 <input
+                  id="word-input"
                   type="text"
                   value={word}
                   onChange={(e) => setWord(e.target.value)}
                   placeholder="ابحث عن معنى كلمة..."
+                  aria-label="ابحث عن معنى كلمة"
                   className="w-full bg-transparent border border-border rounded-full py-4 px-12 text-center text-lg outline-none focus:border-foreground focus:ring-1 focus:ring-foreground transition-all text-foreground placeholder:text-muted-foreground backdrop-blur-sm"
                 />
                 <button
                   type="submit"
                   disabled={loading}
+                  aria-label="بحث"
                   className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-foreground text-background flex items-center justify-center hover:opacity-80 transition-colors disabled:opacity-50"
                 >
                   {loading ? <Loader2 size={18} className="animate-spin" /> : <ArrowUpLeft size={20} />}
@@ -184,10 +188,13 @@ export default function Index() {
 
             {mode === 'sentence' && (
               <form onSubmit={(e) => { e.preventDefault(); handleAnalyzeSentence(); }} className="w-full max-w-2xl flex flex-col items-center gap-4">
+                <label htmlFor="sentence-input" className="sr-only">أدخل جملة عربية لإعرابها</label>
                 <textarea
+                  id="sentence-input"
                   value={sentence}
                   onChange={(e) => setSentence(e.target.value)}
                   placeholder="أدخل جملة عربية لإعرابها كاملةً..."
+                  aria-label="أدخل جملة عربية لإعرابها"
                   rows={3}
                   className="w-full bg-transparent border border-border rounded-2xl py-4 px-6 text-right text-lg outline-none focus:border-foreground focus:ring-1 focus:ring-foreground transition-all text-foreground placeholder:text-muted-foreground backdrop-blur-sm resize-none font-serif"
                 />
@@ -204,10 +211,13 @@ export default function Index() {
 
             {mode === 'rhetoric' && (
               <form onSubmit={(e) => { e.preventDefault(); handleAnalyzeRhetoric(); }} className="w-full max-w-2xl flex flex-col items-center gap-4">
+                <label htmlFor="rhetoric-input" className="sr-only">أدخل نصاً عربياً لتحليله بلاغياً</label>
                 <textarea
+                  id="rhetoric-input"
                   value={rhetoricText}
                   onChange={(e) => setRhetoricText(e.target.value)}
                   placeholder="أدخل نصاً عربياً (جملة، بيت شعر، آية...) لتحليله بلاغياً..."
+                  aria-label="أدخل نصاً عربياً لتحليله بلاغياً"
                   rows={4}
                   className="w-full bg-transparent border border-border rounded-2xl py-4 px-6 text-right text-lg outline-none focus:border-foreground focus:ring-1 focus:ring-foreground transition-all text-foreground placeholder:text-muted-foreground backdrop-blur-sm resize-none font-serif"
                 />
