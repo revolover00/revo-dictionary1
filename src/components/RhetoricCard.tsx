@@ -40,7 +40,7 @@ function SectionHeader({ icon: Icon, title, count }: { icon: any; title: string;
       <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
         <Icon size={16} className="text-primary" />
       </div>
-      <h3 className="text-foreground font-semibold text-lg">{title}</h3>
+      <h2 className="text-foreground font-semibold text-lg">{title}</h2>
       {count !== undefined && count > 0 && (
         <span className="text-xs bg-primary/20 text-primary px-2 py-0.5 rounded-full">{count}</span>
       )}

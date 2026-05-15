@@ -1,0 +1,12 @@
+# ريفو معجمك (Rivo Al-Mu'jam)
+
+> معجم عربي ذكي يقدّم معاني المفردات، إعراب الجمل من سياقها، والتحليل البلاغي للنصوص العربية باستخدام الذكاء الاصطناعي.
+
+The site offers three Arabic-language tools powered by AI:
+- Word meaning lookup (بحث عن معنى)
+- Sentence parsing in context (إعراب من سياق)
+- Rhetorical analysis of Arabic texts (تحليل بلاغي)
+
+## Pages
+
+- [Home](/): Main interface for word lookup, sentence parsing, and rhetorical analysis.
