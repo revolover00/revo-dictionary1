@@ -41,7 +41,7 @@ export default function SentenceCard({ data }: { data: SentenceData }) {
         transition={{ delay: 0.3 }}
         className="bg-secondary/10 border border-border rounded-2xl p-6 md:p-8"
       >
-        <h3 className="text-muted-foreground text-sm uppercase tracking-[0.2em] mb-3">التحليل العام</h3>
+        <h2 className="text-muted-foreground text-sm uppercase tracking-[0.2em] mb-3">التحليل العام</h2>
         <p className="text-lg leading-relaxed text-foreground">{data.التحليل_العام}</p>
       </motion.div>
 
@@ -51,7 +51,7 @@ export default function SentenceCard({ data }: { data: SentenceData }) {
         transition={{ delay: 0.4 }}
         className="bg-secondary/5 rounded-3xl p-6 md:p-8 border border-border shadow-2xl backdrop-blur-xl"
       >
-        <h3 className="text-muted-foreground text-sm uppercase tracking-[0.2em] mb-6">الإعراب التفصيلي</h3>
+        <h2 className="text-muted-foreground text-sm uppercase tracking-[0.2em] mb-6">الإعراب التفصيلي</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-right border-collapse">
             <thead>
@@ -86,7 +86,7 @@ export default function SentenceCard({ data }: { data: SentenceData }) {
           transition={{ delay: 0.5 }}
           className="bg-amber-950/10 border border-amber-500/20 rounded-2xl p-6"
         >
-          <h3 className="text-amber-200/70 text-sm uppercase tracking-[0.2em] mb-4">ملاحظات نحوية</h3>
+          <h2 className="text-amber-200/70 text-sm uppercase tracking-[0.2em] mb-4">ملاحظات نحوية</h2>
           <ul className="space-y-2">
             {data.ملاحظات_نحوية.map((n, i) => (
               <li key={i} className="text-foreground/90 leading-relaxed flex gap-3">
